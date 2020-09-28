@@ -137,7 +137,7 @@ class LocalDestinationPath(object):
         if self._is_dir is None:
             raise RuntimeError('is_dir not set')
         if self._is_dir:
-            self._path.mkdir(mode=0o750, parents=True, exist_ok=True)
+            self._path.mkdir(mode=0o770, parents=True, exist_ok=True)
         else:
             if self._path.exists() and self._path.is_dir():
                 raise RuntimeError(
@@ -146,7 +146,7 @@ class LocalDestinationPath(object):
             else:
                 # ensure parent path exists and is created
                 self._path.parent.mkdir(
-                    mode=0o750, parents=True, exist_ok=True)
+                    mode=0o770, parents=True, exist_ok=True)
 
 
 class Specification(object):
