@@ -413,7 +413,7 @@ class Descriptor(object):
                     self.final_path.stat().st_size != allocatesize):
                 # create parent path
                 self.final_path.parent.mkdir(
-                    mode=0o750, parents=True, exist_ok=True)
+                    mode=0o770, parents=True, exist_ok=True)
                 # allocate file
                 with self.final_path.open('wb') as fd:
                     if allocatesize > 0:
